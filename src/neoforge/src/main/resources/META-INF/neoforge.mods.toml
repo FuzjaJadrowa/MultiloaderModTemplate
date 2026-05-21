@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="${loader}"
+license="MIT"
+
+[[mods]]
+modId="${id}"
+version="${version}"
+displayName="${name}"
+authors="Example Author"
+description="Example Multi-Version Mod template using NeoForge."
+
+[[dependencies.examplemod]]
+modId="neoforge"
+type="required"
+versionRange="${neoforge}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.examplemod]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft}"
+ordering="NONE"
+side="BOTH"
