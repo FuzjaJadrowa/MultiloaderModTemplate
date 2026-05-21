@@ -19,11 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK 25
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -33,7 +33,7 @@ jobs:
 
       - name: Sync target properties
         run: |
-          for target in 1.21.1 1.21.4; do
+          for target in 1.21.1 26.1; do
             cp "gradle/targets/${target}.properties" "versions/${target}-fabric/gradle.properties"
             cp "gradle/targets/${target}.properties" "versions/${target}-neoforge/gradle.properties"
           done

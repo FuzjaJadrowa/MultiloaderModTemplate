@@ -41,8 +41,10 @@ stonecutter {
                 }
 
                 // Choose the appropriate buildscript template depending on the Minecraft version.
-                // Modern versions (e.g. 1.21.4+) or test targets may use unobfuscated loom, while others use standard.
+                // Modern versions (e.g. >= 26.1) use unobfuscated scripts, while others use standard.
                 val buildscript = when {
+                    sc.eval(version, ">= 26.1") && loader == "fabric" -> "build-unobfuscated-fabric.gradle.kts"
+                    sc.eval(version, ">= 26.1") && loader == "neoforge" -> "build-unobfuscated-neoforge.gradle.kts"
                     loader == "fabric" -> "build-obfuscated-fabric.gradle.kts"
                     loader == "neoforge" -> "build-obfuscated-neoforge.gradle.kts"
                     else -> error("Unsupported loader: $loader")
@@ -56,8 +58,8 @@ stonecutter {
         // To add a new Minecraft version:
         // 1. Create a corresponding properties file in gradle/targets/ (e.g., gradle/targets/1.20.4.properties)
         // 2. Add the version string here.
-        mc("fabric", "1.21.1", "1.21.4")
-        mc("neoforge", "1.21.1", "1.21.4")
+        mc("fabric", "1.21.1", "26.1")
+        mc("neoforge", "1.21.1", "26.1")
     }
     create(rootProject)
 }

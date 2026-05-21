@@ -19,11 +19,11 @@ public final class ExampleMod {
 
         // Preprocessor Example:
         // When compile runs on target versions:
-        // - >= 1.21.4: the first block is compiled.
-        // - < 1.21.4: the second block (inside comments) is uncommented and compiled.
+        // - >= 26.1: the first block is compiled.
+        // - < 26.1: the second block (inside comments) is uncommented and compiled.
         
-        //? if >=1.21.4 {
-        LOGGER.info("Example Mod: Running on Minecraft 1.21.4 or newer!");
+        //? if >=26.1 {
+        LOGGER.info("Example Mod: Running on Minecraft 26.1 or newer!");
         //?} else {
         /*LOGGER.info("Example Mod: Running on Minecraft 1.21.1 or older!");
         *///?}
