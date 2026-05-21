@@ -43,8 +43,15 @@ dependencies {
 
 val requiredJava = JavaVersion.toVersion(mod.prop("java_version"))
 java {
-    targetCompatibility = requiredJava
-    sourceCompatibility = requiredJava
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+tasks.withType<JavaExec>().configureEach {
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    })
 }
 
 loom {
