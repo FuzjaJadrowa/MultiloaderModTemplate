@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stonecutter](https://img.shields.io/badge/Powered%20By-Stonecutter-blueviolet.svg)](https://github.com/kikugie/stonecutter)
 
-A cutting-edge, developer-centric template for building multi-platform Minecraft mods targeting multiple Minecraft versions simultaneously. It utilizes **Stonecutter** for version orchestration, allowing you to write your mod's logic once and build it for both **Fabric** and **NeoForge** across various Minecraft versions (e.g., standard obfuscated versions like `1.21.1` and new versions like `26.1`).
+Template for building multi-platform Minecraft mods targeting multiple Minecraft versions simultaneously. It utilizes **Stonecutter** for version orchestration, allowing you to write your mod's logic once and build it for both **Fabric** and **NeoForge** across various Minecraft versions (e.g., standard obfuscated versions like `1.21.1` and new versions like `26.1`).
 
 ---
 
@@ -36,8 +36,6 @@ This template organizes code using a shared code directory and version-specific 
 └── settings.gradle.kts       # Dynamic settings & project loading
 ```
 
----
-
 ## ⚙️ Configuration
 
 ### 1. Mod Metadata
@@ -52,8 +50,6 @@ mod.group=com.example.examplemod # Base Java package
 ### 2. Minecraft Target Properties
 To configure dependencies for a specific Minecraft version, edit its property file inside `gradle/targets/` (e.g. `1.21.1.properties`).
 Do not edit the `[VERSIONED]` placeholders in the root `gradle.properties`.
-
----
 
 ## 🪄 Preprocessor Directives
 
@@ -73,8 +69,6 @@ import net.neoforged.fml.common.Mod;
 // Code for older versions
 //#endif
 ```
-
----
 
 ## 🛠️ Building & Running
 
@@ -99,8 +93,6 @@ To launch the client/server for debugging:
 * **Fabric Client (1.21.1)**: `./gradlew :1.21.1-fabric:runClient`
 * **NeoForge Client (26.1)**: `./gradlew :26.1-neoforge:runClient`
 
----
-
 ## 🚀 Publishing
 
 Publishing parameters are located in `gradle.properties` (`publish.github.repository`, `publish.modrinth.project_id`, `publish.curseforge.project_id`).
@@ -109,8 +101,6 @@ Run the publishing tasks with your API tokens set as environment variables:
 - `MODRINTH_API_KEY`
 - `CURSEFORGE_API_KEY`
 - `GITHUB_TOKEN`
-
----
 
 ## 📄 License
 
