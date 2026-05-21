@@ -7,11 +7,6 @@ assignees: ''
 
 ---
 
-<!-- 
-Please fill out this template as accurately as possible. 
-Be sure to check if a similar issue already exists before opening a new one.
--->
-
 ## Bug Description
 
 ## Steps to Reproduce
@@ -26,7 +21,6 @@ Be sure to check if a similar issue already exists before opening a new one.
 * **Minecraft version:** [e.g. 1.21.1]
 * **Mod version:** [e.g. 1.0.0]
 * **Platform:** [e.g. NeoForge, Fabric]
-* **Other Mods Installed:** [e.g. list of major mods or link to modlist]
 
 ## Minecraft logs
 ```text

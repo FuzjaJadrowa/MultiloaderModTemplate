@@ -7,10 +7,6 @@ assignees: ''
 
 ---
 
-<!--
-Explain your feature suggestion clearly. Include screenshots or mockups if helpful.
--->
-
 ## Is your feature request related to a problem? Please describe.
 
 ## Describe the solution you'd like
@@ -20,5 +16,3 @@ Explain your feature suggestion clearly. Include screenshots or mockups if helpf
 ## Additional Context or Mockups
 
 ## Are you willing to help implement this?
-- [ ] Yes
-- [ ] No
