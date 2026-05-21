@@ -44,13 +44,13 @@ dependencies {
 val requiredJava = JavaVersion.toVersion(mod.prop("java_version"))
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(requiredJava.majorVersion))
     }
 }
 
 tasks.withType<JavaExec>().configureEach {
     javaLauncher.set(javaToolchains.launcherFor {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(requiredJava.majorVersion))
     })
 }
 
