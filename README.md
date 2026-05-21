@@ -27,8 +27,6 @@ This template uses a standard three-project structure:
 └── settings.gradle.kts       # Gradle project structures
 ```
 
----
-
 ## ⚙️ Configuration
 
 All configuration is centralized inside the `gradle.properties` file at the root of the project.
@@ -53,8 +51,6 @@ dep.fabric_api_version=0.102.0+1.21.1
 dep.neoforge_loader=21.1.227    # NeoForge Loader version
 ```
 
----
-
 ## 🛠️ Getting Started & Building
 
 1. **Clone/Use Template**: Initialize your repository using this template.
@@ -72,8 +68,6 @@ dep.neoforge_loader=21.1.227    # NeoForge Loader version
    * **Fabric Client**: `./gradlew :fabric:runClient`
    * **NeoForge Client**: `./gradlew :neoforge:runClient`
 
----
-
 ## 🚀 Publishing
 
 This template includes publishing tasks configured in `buildSrc/src/main/kotlin/PublishTools.kt`. Update the following keys in `gradle.properties` to enable publishing to Modrinth, CurseForge, and GitHub:
@@ -88,8 +82,6 @@ Provide the API keys via environment variables when running publishing tasks:
 - `MODRINTH_API_KEY`
 - `CURSEFORGE_API_KEY`
 - `GITHUB_TOKEN`
-
----
 
 ## 📄 License
 
