@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "name": "${name}",
+  "version": "${version}",
+  "description": "Example mod description. Put details about your mod here.",
+  "authors": [
+    "YourName"
+  ],
+  "contact": {
+    "homepage": "https://example.com",
+    "sources": "https://github.com/YourUsername/ExampleMod",
+    "issues": "https://github.com/YourUsername/ExampleMod/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/${id}/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.examplemod.fabric.ExampleModFabric"
+    ]
+  },
+  "mixins": [
+    "examplemod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader}",
+    "minecraft": "${minecraft}"
+  }
+}

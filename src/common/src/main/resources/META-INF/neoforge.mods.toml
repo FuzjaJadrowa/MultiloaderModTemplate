@@ -1,0 +1,36 @@
+# NeoForge Mods configuration file.
+# Properties enclosed in dollar-sign curly-braces are replaced at build time.
+
+modLoader = "javafml"
+loaderVersion = "${loader}"
+issueTrackerURL = "https://github.com/YourUsername/ExampleMod/issues"
+license = "MIT"
+
+[[mods]]
+# Mod ID must match the value defined in ExampleMod.MOD_ID and gradle.properties.
+modId = "${id}"
+version = "${version}"
+displayName = "${name}"
+authors = "YourName"
+displayURL = "https://example.com"
+logoFile = "assets/${id}/icon.png"
+description = '''
+Example mod description. Put details about your mod here.
+'''
+
+[[dependencies.${id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoforge}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft}"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "examplemod.mixins.json"

@@ -1,0 +1,2 @@
+# Controls whether users can create blank issues without using a template.
+blank_issues_enabled: false
