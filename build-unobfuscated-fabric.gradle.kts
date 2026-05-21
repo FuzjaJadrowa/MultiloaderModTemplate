@@ -48,7 +48,6 @@ dependencies {
     // Standard Fabric dependencies (unobfuscated build sets compileOnly/implementation directly)
     implementation("net.fabricmc:fabric-loader:${mod.dep("fabric_loader")}")
     implementation("net.fabricmc.fabric-api:fabric-api:${mod.dep("fabric_api_version")}")
-    compileOnly("com.terraformersmc:modmenu:${mod.dep("modmenu_version")}")
 }
 
 val requiredJava = JavaVersion.toVersion(javaVersion)

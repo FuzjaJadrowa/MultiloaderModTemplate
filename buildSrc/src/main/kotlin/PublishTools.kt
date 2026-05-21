@@ -47,7 +47,6 @@ fun Project.configureModPublishing() {
             configureMinecraftVersions(supportedMinecraftVersions)
             if (loader == "fabric") {
                 requires("fabric-api")
-                optional("modmenu")
             }
         }
 
@@ -61,7 +60,6 @@ fun Project.configureModPublishing() {
             changelogType.set("markdown")
             if (loader == "fabric") {
                 requires("fabric-api")
-                optional("modmenu")
             }
         }
     }
