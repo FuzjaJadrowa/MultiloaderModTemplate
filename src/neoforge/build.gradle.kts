@@ -1,8 +1,8 @@
 // src/neoforge/build.gradle.kts
-// NeoForge-specific build configuration using net.neoforged.moddev.
+// NeoForge-specific build configuration using dev.architectury.loom.
 
 plugins {
-    id("net.neoforged.moddev") version "2.0.141"
+    id("dev.architectury.loom") version "1.14-SNAPSHOT"
     id("me.modmuss50.mod-publish-plugin")
 }
 
@@ -27,24 +27,26 @@ sourceSets {
     }
 }
 
-neoForge {
-    // Declares which NeoForge version to use.
-    version = mod.dep("neoforge_loader")
+repositories {
+    maven("https://maven.neoforged.net/releases/")
+}
 
-    mods {
-        register(mod.id) {
-            sourceSet(sourceSets.main.get())
-        }
+dependencies {
+    minecraft("com.mojang:minecraft:${mod.dep("minecraft.neoforge")}")
+    mappings(loom.officialMojangMappings())
+    neoForge("net.neoforged:neoforge:${mod.dep("neoforge_loader")}")
+    compileOnly(project(":common")) {
+        isTransitive = false
     }
+}
 
+loom {
     runs {
-        register("client") {
-            gameDirectory = rootProject.file("run/neoforge/client")
-            client()
+        named("client") {
+            runDir = "../../run/neoforge/client"
         }
-        register("server") {
-            gameDirectory = rootProject.file("run/neoforge/server")
-            server()
+        named("server") {
+            runDir = "../../run/neoforge/server"
         }
     }
 }
@@ -78,6 +80,14 @@ tasks.processResources {
         listOf("*.mixins.json"),
         "java" to mod.prop("java_version")
     )
+}
+
+tasks.remapJar {
+    archiveClassifier.set("")
+}
+
+tasks.jar {
+    archiveClassifier.set("dev")
 }
 
 // Activates the custom ModPublishPlugin release task configured in buildSrc.

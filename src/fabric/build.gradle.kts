@@ -27,18 +27,13 @@ sourceSets {
     }
 }
 
-repositories {
-    // Repository for ModMenu dependency
-    maven("https://maven.terraformersmc.com/")
-}
-
 dependencies {
     minecraft("com.mojang:minecraft:${mod.dep("minecraft.fabric")}")
     mappings(loom.officialMojangMappings())
+    compileOnly(project(":common"))
 
     modImplementation("net.fabricmc:fabric-loader:${mod.dep("fabric_loader")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${mod.dep("fabric_api_version")}")
-    modCompileOnly("com.terraformersmc:modmenu:${mod.dep("modmenu_version")}")
 }
 
 val requiredJava = JavaVersion.toVersion(mod.prop("java_version"))

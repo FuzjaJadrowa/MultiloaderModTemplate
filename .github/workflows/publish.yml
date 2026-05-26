@@ -1,10 +1,11 @@
 name: Publish release
 
-on:
-  workflow_dispatch:
-  push:
-    tags:
-      - v*
+# Remove comment hashes to enable workflow for GitHub.
+#on:
+#  workflow_dispatch:
+#  push:
+#    tags:
+#      - v*
 
 permissions:
   contents: write

@@ -11,10 +11,8 @@ import org.gradle.kotlin.dsl.named
 private const val MODRINTH_PROJECT_ID_PROPERTY = "publish.modrinth.project_id"
 private const val CURSEFORGE_PROJECT_ID_PROPERTY = "publish.curseforge.project_id"
 
-/**
- * Configures the mod-publish-plugin for loader subprojects (Fabric, NeoForge).
- * Pulls metadata from gradle.properties and environment variables.
- */
+// Configures the mod-publish-plugin for loader subprojects (Fabric, NeoForge).
+// Pulls metadata from gradle.properties and environment variables.
 fun Project.configurePublishing() {
     configureRootGithubPublishing()
 
@@ -73,10 +71,8 @@ fun Project.configurePublishing() {
     }
 }
 
-/**
- * Configures global GitHub release publishing at the root project level.
- * Combines builds from all loader subprojects to upload them under a single GitHub release.
- */
+// Configures global GitHub release publishing at the root project level.
+// Combines builds from all loader subprojects to upload them under a single GitHub release.
 private fun Project.configureRootGithubPublishing() {
     val configuredMarker = "multiloadertemplate.publish.root_configured"
     if (rootProject.extensions.extraProperties.has(configuredMarker)) {
