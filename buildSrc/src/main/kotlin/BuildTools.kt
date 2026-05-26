@@ -6,32 +6,22 @@ import org.gradle.kotlin.dsl.maven
 import org.gradle.language.jvm.tasks.ProcessResources
 import java.io.File
 
-/**
- * Accessor to retrieve mod configuration properties defined in gradle.properties.
- */
+// Accessor to retrieve mod configuration properties defined in gradle.properties.
 val Project.mod: ModData get() = ModData(this)
 
-/**
- * Helper to retrieve a property from gradle.properties as a String.
- */
+// Helper to retrieve a property from gradle.properties as a String.
 fun Project.prop(key: String): String? = findProperty(key)?.toString()
 
-/**
- * Helper to capitalize the first letter of a String (e.g., "fabric" -> "Fabric").
- */
+// Helper to capitalize the first letter of a String (e.g., "fabric" -> "Fabric").
 fun String.upperCaseFirst() = replaceFirstChar { if (it.isLowerCase()) it.uppercaseChar() else it }
 
-/**
- * Utility to restrict a Maven repository to only resolve specific groups.
- */
+// Utility to restrict a Maven repository to only resolve specific groups.
 fun RepositoryHandler.strictMaven(url: String, alias: String, vararg groups: String) = exclusiveContent {
     forRepository { maven(url) { name = alias } }
     filter { groups.forEach(::includeGroup) }
 }
 
-/**
- * Replaces tokens in resource files (e.g., fabric.mod.json, neoforge.mods.toml) during build time.
- */
+// Replaces tokens in resource files (e.g., fabric.mod.json, neoforge.mods.toml) during build time.
 fun ProcessResources.properties(files: Iterable<String>, vararg properties: Pair<String, Any>) {
     for ((name, value) in properties) inputs.property(name, value)
     filesMatching(files) {
@@ -77,8 +67,13 @@ fun Project.versionedJavaSources(vararg roots: File) {
         }
     }
 
+    val active = isStonecutterProjectActive()
     extensions.getByType<SourceSetContainer>().named("main") {
-        java.setSrcDirs(listOf(generatedSources))
+        if (System.getProperty("idea.sync.active") == "true" && active) {
+            java.setSrcDirs(roots.toList())
+        } else {
+            java.setSrcDirs(listOf(generatedSources))
+        }
     }
     
     tasks.named("compileJava") {
@@ -87,9 +82,7 @@ fun Project.versionedJavaSources(vararg roots: File) {
     }
 }
 
-/**
- * Structured container for accessing mod metadata and dependency versions from gradle.properties.
- */
+// Structured container for accessing mod metadata and dependency versions from gradle.properties.
 @JvmInline
 value class ModData(private val project: Project) {
     val id: String get() = requireNotNull(project.prop("mod.id")) { "Missing 'mod.id' in gradle.properties" }
@@ -99,4 +92,14 @@ value class ModData(private val project: Project) {
 
     fun prop(key: String) = requireNotNull(project.prop("mod.$key")) { "Missing 'mod.$key' in gradle.properties" }
     fun dep(key: String) = requireNotNull(project.prop("dep.$key")) { "Missing 'dep.$key' in gradle.properties" }
+}
+
+private fun Project.isStonecutterProjectActive(): Boolean {
+    val stonecutter = extensions.findByName("stonecutter") ?: return false
+    return try {
+        val current = stonecutter.javaClass.getMethod("getCurrent").invoke(stonecutter)
+        current.javaClass.getMethod("isActive").invoke(current) as? Boolean ?: false
+    } catch (e: Exception) {
+        false
+    }
 }
