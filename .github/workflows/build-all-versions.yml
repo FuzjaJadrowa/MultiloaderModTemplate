@@ -1,12 +1,13 @@
 name: Build all versions
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-  workflow_dispatch:
+# Remove comment hashes to enable workflow for GitHub.
+#on:
+#  push:
+#    branches:
+#      - main
+#      - master
+#  pull_request:
+#  workflow_dispatch:
 
 permissions:
   contents: read

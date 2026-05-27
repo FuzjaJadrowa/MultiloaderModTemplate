@@ -46,7 +46,9 @@ fun Project.configureModPublishing() {
             projectId.set(providerPropertyOrEnvironment(MODRINTH_PROJECT_ID_PROPERTY, "MODRINTH_PROJECT_ID"))
             configureMinecraftVersions(supportedMinecraftVersions)
             if (loader == "fabric") {
-                requires("fabric-api")
+                // Your dependencies in format from publishing plugin. For example:
+                // requires("fabric-api")
+                // optional("modmenu")
             }
         }
 
@@ -59,7 +61,9 @@ fun Project.configureModPublishing() {
             this.changelog.set(changelog)
             changelogType.set("markdown")
             if (loader == "fabric") {
-                requires("fabric-api")
+                // Your dependencies in format from publishing plugin. For example:
+                // requires("fabric-api")
+                // optional("modmenu")
             }
         }
     }
