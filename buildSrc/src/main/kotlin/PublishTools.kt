@@ -49,8 +49,9 @@ fun Project.configurePublishing() {
             projectId.set(providerPropertyOrEnvironment(MODRINTH_PROJECT_ID_PROPERTY, "MODRINTH_PROJECT_ID"))
             configureMinecraftVersions(supportedMinecraftVersions)
             if (loader == "fabric") {
-                requires("fabric-api")
-                optional("modmenu")
+                // Your dependencies in format from publishing plugin. For example:
+                // requires("fabric-api")
+                // optional("modmenu")
             }
         }
 
@@ -64,8 +65,9 @@ fun Project.configurePublishing() {
             this.changelog.set(changelogProvider)
             changelogType.set("markdown")
             if (loader == "fabric") {
-                requires("fabric-api")
-                optional("modmenu")
+                // Your dependencies in format from publishing plugin. For example:
+                // requires("fabric-api")
+                // optional("modmenu")
             }
         }
     }
@@ -83,7 +85,7 @@ private fun Project.configureRootGithubPublishing() {
 
     val modVersion = rootProject.providers.gradleProperty("mod.version")
     
-    val rootChangelogFile = rootProject.layout.projectDirectory.file(".github/changelogs/changelog.md")
+    val rootChangelogFile = rootProject.layout.projectDirectory.file(".github/changelogs/matrix-changelog.md")
     val rootChangelog = if (rootChangelogFile.asFile.exists()) {
         rootProject.providers.fileContents(rootChangelogFile).asText
     } else {
