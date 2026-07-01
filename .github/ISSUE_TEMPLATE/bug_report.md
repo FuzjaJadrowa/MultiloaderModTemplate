@@ -1,32 +1,33 @@
----
-name: Bug Report
-about: Report a bug or crash to help us improve Example Mod.
-title: ''
-labels: bug
-assignees: ''
-
----
-
-## Bug Description
-
-## Steps to Reproduce
-1. Go to '...'
-2. Click '...'
-3. Select '...'
-4. See bug
-
-## Expected Behavior
-
-## Environment
-* **Minecraft version:** [e.g. 1.21.1]
-* **Mod version:** [e.g. 1.0.0]
-* **Platform:** [e.g. NeoForge, Fabric]
-
-## Minecraft logs
-```text
-(Paste your logs or crash message here)
-```
-
-## Screenshots
-
-## Additional Context
+# ---
+# name: Bug Report
+# about: Report a bug or crash to help us improve Example Mod.
+# title: ''
+# labels: bug
+# assignees: ''
+# ---
+#
+# <!-- Uncomment the lines below to activate this issue template
+# ## Bug Description
+# 
+# ## Steps to Reproduce
+# 1. Go to '...'
+# 2. Click '...'
+# 3. Select '...'
+# 4. See bug
+# 
+# ## Expected Behavior
+# 
+# ## Environment
+# * **Minecraft version:** [e.g. 1.21.1]
+# * **Mod version:** [e.g. 1.0.0]
+# * **Platform:** [e.g. NeoForge, Fabric]
+# 
+# ## Minecraft logs
+# ```text
+# (Paste your logs or crash message here)
+# ```
+# 
+# ## Screenshots
+# 
+# ## Additional Context
+# -->

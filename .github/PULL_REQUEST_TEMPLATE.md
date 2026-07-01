@@ -1,3 +1,4 @@
+<!-- Uncomment the lines below to activate this pull request template
 ## Summary
 
 Describe what this pull request changes.
@@ -23,3 +24,4 @@ Describe how you tested the changes.
 - [ ] I kept changes thematic.
 - [ ] I updated docs/config comments if needed.
 - [ ] I verified this does not break existing behavior.
+-->
