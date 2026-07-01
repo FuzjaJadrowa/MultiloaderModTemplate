@@ -8,7 +8,7 @@ Template for building multi-platform Minecraft mods targeting multiple Minecraft
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 This template organizes code using a shared code directory and version-specific target builds managed by Stonecutter:
 - **`src/`**: Contains the main source code folders.
@@ -36,7 +36,7 @@ This template organizes code using a shared code directory and version-specific 
 └── settings.gradle.kts       # Dynamic settings & project loading
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Mod Metadata
 Update the following properties in `gradle.properties` at the root of the project:
@@ -51,7 +51,7 @@ mod.group=com.example.examplemod # Base Java package
 To configure dependencies for a specific Minecraft version, edit its property file inside `gradle/targets/` (e.g. `1.21.1.properties`).
 Do not edit the `[VERSIONED]` placeholders in the root `gradle.properties`.
 
-## 🪄 Preprocessor Directives
+## Preprocessor Directives
 
 We use Stonecutter's preprocessor to write version-specific or loader-specific code inside the shared `src/` directories.
 
@@ -70,7 +70,7 @@ import net.neoforged.fml.common.Mod;
 //#endif
 ```
 
-## 🛠️ Building & Running
+## Building & Running
 
 ### 1. Build All Targets
 To compile and assemble jars for all loaders and target Minecraft versions, simply run:
@@ -93,7 +93,7 @@ To launch the client/server for debugging:
 * **Fabric Client (1.21.1)**: `./gradlew :1.21.1-fabric:runClient`
 * **NeoForge Client (26.1)**: `./gradlew :26.1-neoforge:runClient`
 
-## 🚀 Publishing
+## Publishing
 
 Publishing parameters are located in `gradle.properties` (`publish.github.repository`, `publish.modrinth.project_id`, `publish.curseforge.project_id`).
 
@@ -102,6 +102,6 @@ Run the publishing tasks with your API tokens set as environment variables:
 - `CURSEFORGE_API_KEY`
 - `GITHUB_TOKEN`
 
-## 📄 License
+## License
 
 This template is licensed under the **MIT License**. See [LICENSE](LICENSE) for more details.
