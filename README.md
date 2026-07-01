@@ -8,7 +8,7 @@ A modern, clean, and developer-friendly template for building multi-platform Min
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 This template uses a standard three-project structure:
 - **`common`**: Contains the main mod logic, assets, and code that is independent of any specific mod loader.
@@ -27,7 +27,7 @@ This template uses a standard three-project structure:
 └── settings.gradle.kts       # Gradle project structures
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 All configuration is centralized inside the `gradle.properties` file at the root of the project.
 
@@ -51,7 +51,7 @@ dep.fabric_api_version=0.102.0+1.21.1
 dep.neoforge_loader=21.1.227    # NeoForge Loader version
 ```
 
-## 🛠️ Getting Started & Building
+## Getting Started & Building
 
 1. **Clone/Use Template**: Initialize your repository using this template.
 2. **Import**: Import the root project directory into your IDE (IntelliJ IDEA recommended). Make sure to let Gradle import and configure the workspace.
@@ -68,7 +68,7 @@ dep.neoforge_loader=21.1.227    # NeoForge Loader version
    * **Fabric Client**: `./gradlew :fabric:runClient`
    * **NeoForge Client**: `./gradlew :neoforge:runClient`
 
-## 🚀 Publishing
+## Publishing
 
 This template includes publishing tasks configured in `buildSrc/src/main/kotlin/PublishTools.kt`. Update the following keys in `gradle.properties` to enable publishing to Modrinth, CurseForge, and GitHub:
 
@@ -83,6 +83,6 @@ Provide the API keys via environment variables when running publishing tasks:
 - `CURSEFORGE_API_KEY`
 - `GITHUB_TOKEN`
 
-## 📄 License
+## License
 
 This template is available under the **MIT License**. See [LICENSE](LICENSE) for more details.
